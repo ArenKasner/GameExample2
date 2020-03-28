@@ -106,7 +106,7 @@ public class GameControl : MonoBehaviour
             missed.text = "Misses: " + misses.ToString();
             yield return new WaitForSeconds(1f);
         }
-
+        yield return new WaitForSeconds(2);
         resultsPanel.SetActive(true);
         scoreText.text = "Score: " + score;
         targetsHitText.text = "Targets Hit:" + targetsHit + "/" + targetsAmount;
