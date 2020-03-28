@@ -8,22 +8,22 @@ public class Target : MonoBehaviour
     Vector3 temp;
     private SpriteRenderer sprite;
     public static bool hit = false;
-    private int maxscore = 30;
+    private int maxscore = 20;
     // Start is called before the first frame update
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
         hit = false;
-        Destroy(gameObject, 2.5f);
+        Destroy(gameObject, 2);
     }
 
     private void OnMouseDown()
     {
         temp = transform.localScale;
         Debug.Log(temp);
-        int multiplier = Convert.ToInt32(temp.x * 10);
-        multiplier =- 10;
-        Debug.Log(multiplier);
+        int multiplier = Convert.ToInt32(temp.x*10);
+       
+        Debug.Log(multiplier+"score");
         GameControl.score += (maxscore - multiplier);
         GameControl.targetsHit += 1;
         FindObjectOfType<AudioManager>().Play("break");
@@ -37,7 +37,7 @@ public class Target : MonoBehaviour
 
         temp.x += Time.deltaTime;
         temp.y += Time.deltaTime;
-        temp.z += Time.deltaTime;
+        
 
         if (temp.x > 1.25)
         {
@@ -45,9 +45,11 @@ public class Target : MonoBehaviour
             sprite.color = new Color(1, 0, 0, 1);
         }
 
-        if (temp.x > 2)
+        if (temp.x >= 2)
         {
+            GameControl.misses+=1;
             Destroy(gameObject);
+
         }
 
         transform.localScale = temp;

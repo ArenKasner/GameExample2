@@ -23,7 +23,7 @@ public class GameControl : MonoBehaviour
     [SerializeField]
     private Text scoreText, targetsHitText, shotsFiredText, accuracyText, updateScore, updateTargets,missed;
 
-    public static int score, targetsHit, checktargetshit,misses;
+    public static int score, targetsHit, checktargetshit, misses;
 
     private float shotsFired;
 
