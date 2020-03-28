@@ -1175,7 +1175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4492398634557611331, guid: 9afa76440aa25ea489de409ded3b3fff, type: 3}
-  cursorTexture: {fileID: 2800000, guid: 437ded3d81ced1c44aaefe2ce9b28023, type: 3}
+  cursorTexture: {fileID: 2800000, guid: d4fe92c568f17094e91a4c2ebf2497fb, type: 3}
   getReadyText: {fileID: 1842394824}
   resultsPanel: {fileID: 1242234678}
   scoreText: {fileID: 351189727}

@@ -22,8 +22,6 @@ public class Target : MonoBehaviour
         temp = transform.localScale;
         Debug.Log(temp);
         int multiplier = Convert.ToInt32(temp.x*10);
-       
-        Debug.Log(multiplier+"score");
         GameControl.score += (maxscore - multiplier);
         GameControl.targetsHit += 1;
         FindObjectOfType<AudioManager>().Play("break");

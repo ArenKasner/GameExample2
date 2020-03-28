@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
     [SerializeField]
-    private GameObject target;
+   private GameObject target;
 
     [SerializeField]
-    private Texture2D cursorTexture;
+   private Texture2D cursorTexture;
 
    private Vector2 cursorHotspot;
 
@@ -66,7 +67,10 @@ public class GameControl : MonoBehaviour
                 if (Target.hit == false)
                 {
                     misses += 1;
-                    Debug.Log("Miss");
+                }
+                if(misses >= 3)
+                {
+                    GameOver();
                 }
             }
             
@@ -121,6 +125,10 @@ public class GameControl : MonoBehaviour
         start = true;
         getReadyText.gameObject.SetActive(true);
         StartCoroutine("GetReady");
+    }
+    public void GameOver()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }
